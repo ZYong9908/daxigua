@@ -185,7 +185,7 @@ window.boot = function() {
             canvas = document.getElementById('GameCanvas');
         }
         var launchScene = settings.launchScene;
-        console.log("landscape,", launchScene);
+        // console.log("landscape,", launchScene);
         var MainManger = __require("MainManage");
         MainManger.init(launchScene, cc.sys.isBrowser, canvas.style.visibility);
 

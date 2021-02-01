@@ -1414,7 +1414,7 @@ window.__require = function e(t, n, o) {
             }), c(o, "httpInitUrl", function(e) {
                 var t = window.location.href,
                     n = t.substring(0, t.lastIndexOf("//") + 2) + window.location.host + "/Service/Share/index";
-                this.URL = n, console.log("data", this.URL), this.retGameId = e
+                this.URL = n, /*console.log("data", this.URL),*/ this.retGameId = e
             }), c(o, "send", function(e, t, n, o) {
                 this.cacheList.push({
                     type: e,
@@ -1426,7 +1426,7 @@ window.__require = function e(t, n, o) {
                 if (0 != this.cacheList.length) {
                     this.isBusy = !0, this.perform = this.cacheList.shift(), this.req = cc.loader.getXMLHttpRequest(), this.req.onreadystatechange = this.onDataHandler.bind(this), this.req.onerror = this.onErrorHandler.bind(this), this.req.ontimeout = this.onTimeoutHandler.bind(this), this.req.timeout = 2e3, cc.log("pos", this.URL), this.req.open("POST", this.URL), this.req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
                     var e = this.returnLanguage();
-                    console.log("gameIdid", this.retGameId);
+                    // console.log("gameIdid", this.retGameId);
                     var t = this.retGameId,
                         n = {
                             type: this.perform.type,
@@ -1454,7 +1454,7 @@ window.__require = function e(t, n, o) {
                             var e = document.getElementById("GameDiv");
                             e && (e.style.backgroundImage = "")
                         }
-                        cc.loader.onProgress = null, console.log("Success to load scene: " + t)
+                        cc.loader.onProgress = null /*console.log("Success to load scene: " + t)*/
                     })
                 }
             }), c(o, "returnLanguage", function() {
@@ -1734,10 +1734,10 @@ window.__require = function e(t, n, o) {
         var o = {
             goToCover: function(e, t, n, o, c) {
                 var a = e;
-                a = null == a || void 0 == a || e, console.log("LoadBoolBeforeLoadS", a), this.needShow = !1, a && a ? (this.needShow = !0, showMyAds()) : this.needShow = !1, this.needShow ? (void 0 == preloader && this.startGoToGame(n, o, c), resCompleteFlag = !0, adCompleteFlag && resCompleteFlag && this.startGoToGame(n, o, c)) : this.startGoToGame(n, o, c)
+                a = null == a || void 0 == a || e, /*console.log("LoadBoolBeforeLoadS", a),*/ this.needShow = !1, a && a ? (this.needShow = !0, showMyAds()) : this.needShow = !1, this.needShow ? (void 0 == preloader && this.startGoToGame(n, o, c), resCompleteFlag = !0, adCompleteFlag && resCompleteFlag && this.startGoToGame(n, o, c)) : this.startGoToGame(n, o, c)
             },
             startGoToGame: function(e, t, n) {
-                console.log("goToScene"), noAdGoToScene()
+                /*console.log("goToScene"), */noAdGoToScene()
             }
         };
         t.exports = o, cc._RF.pop()
@@ -1762,7 +1762,7 @@ window.__require = function e(t, n, o) {
                 cc.director.getCollisionManager().enabled = !0, cc.director.getPhysicsManager().enabled = !0, this.gameOveEndBool = !1, this.gameOverNum = 0, this.gameWidth = cc.winSize.width, this.gameHeight = cc.winSize.height, o.playNum, o.playNum++, c.loadingLayer("panel/LinkIconSpr"), o.mainGameJs = this, o.publicGameBool
             },
             play: function() {
-                console.log(1);
+                // console.log(1);
                 var e = this;
                 adBreak({
                     type: "next",
@@ -1779,14 +1779,14 @@ window.__require = function e(t, n, o) {
             addTouchEvents: function() {
                 var e = this;
                 this.node.on(cc.Node.EventType.TOUCH_START, function(t) {
-                    if (o.GAME_OVER_BOOL && o.noTouchBool) return o.gameScore++, e.sceneScore.string = o.gameScore, console.log("ggoog", o.gameScore), o.gameScore >= 2 && (this.lastPos = t.getLocation(), e.gameEnd()), !0
+                    if (o.GAME_OVER_BOOL && o.noTouchBool) return o.gameScore++, e.sceneScore.string = o.gameScore, /*console.log("ggoog", o.gameScore),*/ o.gameScore >= 2 && (this.lastPos = t.getLocation(), e.gameEnd()), !0
                 }, this), this.node.on(cc.Node.EventType.TOUCH_MOVE, this.on_touch_move, this), this.node.on(cc.Node.EventType.TOUCH_END, this.on_touch_end, this)
             },
             on_touch_move: function() {
-                console.log("touchMoved")
+                // console.log("touchMoved")
             },
             on_touch_end: function() {
-                console.log("touchEnd")
+                // console.log("touchEnd")
             },
             gameEnd: function() {
                 o.GAME_OVER_BOOL = !1, a.gameOverShowText(o.gameScore, 1), this.node.runAction(cc.sequence(cc.delayTime(.5), cc.callFunc(this.gameEnd1.bind(this))))
@@ -2033,7 +2033,7 @@ window.__require = function e(t, n, o) {
                         if (a.playNum >= 1) return;
                         a.playNum++
                     }
-                    a.launchScene = e, a.Bros = t, a.caS = n, this.curType = 1, this.getHttpGameId(), this.gamePV_load(), console.log("thisg", this.gameHttpId), o.httpInitUrl(this.gameHttpId);
+                    a.launchScene = e, a.Bros = t, a.caS = n, this.curType = 1, this.getHttpGameId(), this.gamePV_load(), /*console.log("thisg", this.gameHttpId),*/ o.httpInitUrl(this.gameHttpId);
                     var c = this.initLanguage();
                     this.gameNameText = c.game_name, this.gameInfoText = c.game_info, this.txtStartText = c.txtStart, this.txtMoreText = c.txtMore, this.txtAgainText = c.txtAgain, this.gameEndLText = c.gameEndL, this.gameEndL1Text = c.gameEndL1, this.bgLayRgb = c.bgRgb, this.gameEndName1 = c.gameT2, this.gameEndName2 = c.gameT3, this.gameEndUrl1 = c.gameUrl1, this.gameEndUrl2 = c.gameUrl2, this.langugeType = this.curType, i.goToCover(this.adShowBefore, this.adShowAfter, e, t, n)
                 },
@@ -2047,9 +2047,9 @@ window.__require = function e(t, n, o) {
                         a = c.lastIndexOf("/"),
                         i = c.substring(0, a),
                         r = (a = i.lastIndexOf("/"), i.substring(a + 1, i.length));
-                    this.gameHttpId = r, console.log("gameIdNew", r);
+                    this.gameHttpId = r/*, console.log("gameIdNew", r)*/;
                     e.substring(e.lastIndexOf("//") + 4, e.lastIndexOf("com") + 3);
-                    this.moreGameUrl = t + n, console.log("moreGame", this.moreGameUrl)
+                    this.moreGameUrl = t + n/*, console.log("moreGame", this.moreGameUrl)*/
                 },
                 gameOverShowText: function(e, t) {
                     this.ajaxLoad(this.subScoreHttp, "gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult)
@@ -2060,7 +2060,7 @@ window.__require = function e(t, n, o) {
                 ajaxOnLogoResult: function() {},
                 ajaxLoad: function(e, t, n) {
                     var o = cc.loader.getXMLHttpRequest();
-                    o.onreadystatechange = n, o.open("POST", e), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), o.send(t)
+                    // o.onreadystatechange = n, o.open("POST", e), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), o.send(t)
                 },
                 scoreResult: function(e) {
                     if (null != e.currentTarget.response && "" != e.currentTarget.response) {

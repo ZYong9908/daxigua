@@ -21,7 +21,7 @@ adsLoader.addEventListener(
     false);
 
 function onAdError(adErrorEvent) {
-    console.log("adError");
+    // console.log("adError");
 
 
     document.getElementById("adContainer").style.display = "none";
@@ -53,7 +53,7 @@ function onAdError(adErrorEvent) {
                         }
                     }
                     cc.loader.onProgress = null;
-                    console.log('Success to load scene: ' + launchScene);
+                    // console.log('Success to load scene: ' + launchScene);
                 }
 
             );
@@ -69,13 +69,13 @@ function onAdError(adErrorEvent) {
     adEndComplete = true;
     if (adEndComplete && resEndComplete) {
         adEndComplete = false;
-        console.log("indexOverErr");
+        // console.log("indexOverErr");
         var MainManger = __require("MainManage");
         MainManger.showGameEndLayer();
     }
 
     // Handle the error logging and destroy the AdsManager
-    console.log(adErrorEvent.getError());
+    // console.log(adErrorEvent.getError());
     adsManager.destroy();
 }
 
@@ -105,7 +105,7 @@ function showMyAds() {
 
     if (typeof(killads) == 'undefined') {
         // alert('广告被过滤');
-        console.log("AdNo");
+        // console.log("AdNo");
         adEndComplete = false;
         var MainManger = __require("MainManage");
         MainManger.showGameEndLayer();
@@ -133,7 +133,7 @@ function showMyAds() {
 
 
 function onAdsManagerLoaded(adsManagerLoadedEvent) {
-    console.log("ADLoad");
+    // console.log("ADLoad");
 
     adCompleteFlag = true;
 
@@ -183,12 +183,12 @@ function onContentPauseRequested() {
 
 //广告结束的时候调用的函数
 function onContentResumeRequested() {
-    console.log("ADLoadComplete", resEndComplete);
+    /*console.log("ADLoadComplete", resEndComplete);*/
 
 
 
     var GameConfig = __require("GameConfig");
-    console.log("IndexMainManger", GameConfig.launchScene, GameConfig.Bros, GameConfig.caS);
+  /*  console.log("IndexMainManger", GameConfig.launchScene, GameConfig.Bros, GameConfig.caS);*/
 
     if (GameConfig.playNum == 1) {
         adCompleteFlag = true;
@@ -215,7 +215,7 @@ function onContentResumeRequested() {
                         }
                     }
                     cc.loader.onProgress = null;
-                    console.log('Success to load scene1: ' + launchScene);
+                    // console.log('Success to load scene1: ' + launchScene);
 
 
 
@@ -238,7 +238,7 @@ function onContentResumeRequested() {
     adEndComplete = true;
     if (adEndComplete && resEndComplete) {
         adEndComplete = false;
-        console.log("indexOverErr");
+        // console.log("indexOverErr");
         var MainManger = __require("MainManage");
         MainManger.showGameEndLayer();
     }
@@ -257,7 +257,7 @@ function noAdGoToScene() {
 
 
     var GameConfig = __require("GameConfig");
-    console.log("IndexMainMangerMaing", GameConfig.launchScene, GameConfig.Bros, GameConfig.caS);
+    // console.log("IndexMainMangerMaing", GameConfig.launchScene, GameConfig.Bros, GameConfig.caS);
 
     var launchScene = GameConfig.launchScene;
     var Bros = GameConfig.Bros;
@@ -277,7 +277,7 @@ function noAdGoToScene() {
                 }
             }
             cc.loader.onProgress = null;
-            console.log('Success to load scene1Main: ' + launchScene);
+            // console.log('Success to load scene1Main: ' + launchScene);
 
 
 
