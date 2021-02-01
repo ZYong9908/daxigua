@@ -1,6 +1,6 @@
 ## 合成大西瓜
 
-演示地址：https://zyong.vip/daxigua
+演示地址：https://zyong.vip/daxigua/
 
 
 change：修改博客地址，删除部分输出
